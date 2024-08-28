@@ -5,29 +5,199 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <title>fashionhub</title>
 
+        <!-- css style sheet -->
+        <link rel="stylesheet" href="css/style.css">
         <!-- Bootstrap cdn -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
     <body>
-        <div class="container">
-            <header>
-                <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-6 pt-3">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="fashionhub_logo">
-                  </a>
+        <!-- header start -->
+    <header>
+        <div class="container-fluid">
+            <div class="row border-bottom">
+                <div class="col-lg-5 col-md-6 col-sm-6 pt-1 pl-10">
+                    <!-- logo start -->
+                    <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png"  alt="fashionhub_logo">
+                    </a>
+                    <!-- logo end -->
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 pt-1">   
+                    <img src="images/bag.png" style='float: right; height: 40px; width: 40px; 'alt="fashionhub_bag">
+                </div>    
             </div>
-            <div class="col-lg-7 col-md-6 col-sm-6 pt-3">
-                
-                    <img src="images/bag.png" style='float: right; height: 50px; width: 50px; 'alt="fashionhub_bag">
-            </div>     
         </div>
-        </div>
-        </header>
-        </div>
-    </body>
+    </header>
+    
+        <!-- header end -->
 
+         <!-- slider start -->
+        <section class="sproduct">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-5 col-md-12 col-12">
+                        <!-- big product image section -->
+                        <img class="img-fluid rounded pb-3 w-100" src="images/1/img1.png" alt="product_image">
+                        <div class="small-img-group" >
+
+                             <!-- this image come from the database -->
+                            <div class="small-img-column">
+                                <img src="images/1/img2.png" width="100" class="small_img rounded" alt="product_iamge">
+                            </div>
+                            <div class="small-img-column">
+                                <img src="images/1/img3.png" width="100" class="small_img rounded" alt="product_iamge">
+                            </div>
+                            <div class="small-img-column">
+                                <img src="images/1/img4.png" width="100" class="small_img rounded" alt="product_iamge">
+                            </div>
+                            <div class="small-img-column">
+                                <img src="images/1/img4.png" width="100" class="small_img rounded" alt="product_iamge">
+                            </div>
+                            <!-- image end -->
+                        </div>
+                    </div>
+               
+                <!-- right section start here -->
+                    <div class="col-lg-6 col-md-12 col-12" style="padding-left: 100px;">
+                        <!-- heading -->
+                         <div class="atext border-bottom">
+                            <p class="ltext">Home  >   Decoration  >  Furniture  >  <b>Sideboard</b></p>
+                            <h1>Embrace Sideboard</h1>
+                            <p>Teixeira Design Studio</p>
+                         </div>
+                    
+                <!-- price and review section -->
+                 
+
+                 <!-- choose color section -->
+                
+                  <!-- choose size section -->
+                    <div class="size border-bottom">
+                        <p class="choosetext">Choose a Size</p>
+                        <div class="btngroup">
+                            <button type="button" class="btn btn-light" style="border-radius: 10px; color: #3A4980;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Small
+                                    </label>
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-light" style="border-radius: 10px; color: #3A4980;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Medium
+                                    </label>
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-light" style="border-radius: 10px; color: #3A4980;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    large
+                                    </label>
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-light" style="border-radius: 10px; color: #3A4980;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Extra Large
+                                    </label>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- choose sizee button end here -->
+
+                    <!-- quantity button -->
+                     <div class="qtybutton">
+                        <div class="wrapper">
+                            <span class="minus">-</span>
+                            <span class="num">01</span>
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                     <script>
+                        const plus = document.querySelector(".plus"),
+                        minus = document.querySelector(".minus"),
+                        num = document.querySelector(".num");
+
+                        let a = 1;
+                        plus.addEventListener("click", ()=>{
+                            a++;
+                            a = (a < 10) ? "0" + a : a;
+                            num.innerText = a;
+                            console.log(a);
+                        });
+                        minus.addEventListener("click", ()=>{
+                            if(a > 0) {
+                                a--;
+                                a = (a < 10) ? "0" + a : a;
+                                num.innerText = a;
+                                console.log(a);
+                            }
+                        });
+                     </script>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+    
+            <!-- description start here -->
+             <div class="container">
+             <div class="row" style="padding-top: 50px;">
+                <h4 class="dhead">Description</4S3>
+                        <span class="span"><hr /></span>
+             </div>
+            <!--product description start here -->
+             <div>
+                <h4 class="pdhead pt-5">Product Description</h4>
+                <p class="dtext">When it's colder than the far side of the moon and spitting rain too, you've still got to look good. From water-repellent leather to a rugged outsole, the Lunar Force 1 adapts AF-1 style, so you can keep your flame burning when the weather hits. Metal lace hardware and extended tongue bring mountain boot toughness, while the star-studded toe design gives your look the edge</p>
+
+             </div>
+             <!-- benefits start here -->
+              <div>
+                <h4 class="bhead">Benefits</h4>
+                <div class="list">
+                <li>Durable leather is easily cleanable so you can keep your look fresh.</li>
+                <li>Water-repellent finish and internal membrane help keep your feet dry.</li>
+                <li>Toe piece with star pattern adds durability.</li>
+                <li>Synthetic insulation helps keep you warm.</li>
+                <li>Originally designed for performance hoops, the Air unit delivers lightweight cushioning.</li>
+                <li>Plush tongue wraps over the ankle to help keep out the moisture and cold.</li>
+                <li>Rubber outsole with aggressive traction pattern adds durable grip.</li>
+                <li>Durable leather is easily cleanable so you can keep your look fresh.</li>
+                </div>
+              </div>
+              <!-- product details start here -->
+               <div>
+                <h4 class="pdhead pt-3">Product Details</h4>
+                <div class="list">
+                <li>Not intended for use as Personal Protective Equipment (PPE)</li>
+                <li>Water-repellent finish and internal membrane help keep your feet dry.</li>
+               </div>
+                </div>
+
+               <!-- more details start here -->
+                <div class="moredtl pb-10">
+                    <h4 class="mdhead pt-3">More Details</h4>
+                    <div class="list">
+                    <li>Lunarlon midsole delivers ultra-plush responsiveness</li>
+                    <li>Encapsulated Air-Sole heel unit for lightweight cushioning</li>
+                    <li>Colour Shown: Ale Brown/Black/Goldtone/Ale Brown</li>
+                    <li>Style: 805899-202</li>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    </body>
+    
     <!-- bootstrap js, jq. propper -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
