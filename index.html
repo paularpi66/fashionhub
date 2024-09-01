@@ -7,8 +7,14 @@
 
         <!-- css style sheet -->
         <link rel="stylesheet" href="css/style.css">
+        <script src="script.js" defer></script>
+
         <!-- Bootstrap cdn -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- font cdn -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     </head>
     <body>
@@ -38,22 +44,38 @@
                 <div class="row mt-5">
                     <div class="col-lg-5 col-md-12 col-12">
                         <!-- big product image section -->
-                        <img class="img-fluid rounded pb-3 w-100" src="images/1/img1.png" alt="product_image">
-                        <div class="small-img-group" >
-
-                             <!-- this image come from the database -->
-                            <div class="small-img-column">
-                                <img src="images/1/img2.png" width="100" class="small_img rounded" alt="product_iamge">
-                            </div>
-                            <div class="small-img-column">
-                                <img src="images/1/img3.png" width="100" class="small_img rounded" alt="product_iamge">
-                            </div>
-                            <div class="small-img-column">
-                                <img src="images/1/img4.png" width="100" class="small_img rounded" alt="product_iamge">
-                            </div>
-                            <div class="small-img-column">
-                                <img src="images/1/img4.png" width="100" class="small_img rounded" alt="product_iamge">
-                            </div>
+                        <img class="img-fluid rounded pb-3 w-100" id="iproductmainimg" src="images/1/img1.png" alt="product_image">
+                            <div class="small-img-group" >
+                                <div class="carousel-view">
+                                  
+                                  <!-- Left Button -->
+                                  <button id="prev-btn" class="prev-btn">  <img src="images/left-arrow.png" style="height: 15px; width: 15px;"></button>
+                                  
+                                      <!-- List Container -->
+                                      <div id="item-list" class="item-list">
+                                            <!-- Items -->
+                                            <div class="item">
+                                                <img id="item" class="item" src="images/1/img1.jpg"/>
+                                            </div>
+                                            <div class="item">
+                                                <img id="item" class="item" src="images/1/img2.jpg"/>
+                                            </div>
+                                            <div class="item">
+                                                <img id="item" class="item" src="images/1/img3.jpg"/>
+                                            </div>
+                                            <div class="item">
+                                                <img id="item" class="item" src="images/1/img4.jpg"/>
+                                            </div>
+                                            
+                                      </div>
+                                  
+                                  <!-- Right Button -->
+                                      <button id="next-btn" class="next-btn"> 
+                                        <img src="images/right-arrow.png" style="height: 15px; width: 15px;">
+                                      </button>
+                                  </div>
+                            
+                            
                             <!-- image end -->
                         </div>
                     </div>
@@ -68,9 +90,57 @@
                          </div>
                     
                 <!-- price and review section -->
-                 
+
+                    <div class="pricerev border-bottom" style="padding-top: 20px;">
+                        <div class="row">
+                        
+                                <div class="col-lg-4 col-sm-4 col-md-4">
+                                    <h1 class="h1text">$<b>71.56</b></h1>
+                                </div>
+                                <div class="col-lg-8 col-sm-4 col-md-4">
+                                    <img src="images/star.png" alt="star"> <b>4.8</b>
+                                    <img src="images/messenger.png" alt="messenger"><b style="color: #3A4980;">Reviews</b>
+                                    <p style="color: #A3A9C2;"><b style="color: #3E9242">93%</b> of buyers have recommended this.</p>
+                                    </div>
+                                   
+                                </div>
+                            
 
                  <!-- choose color section -->
+                        <div class="ccolor">
+                            <p class="choosecolor">Choose a Color</p>
+                            <label class="color-option color-red">
+                                <input type="radio" name="color" value="red">
+                                <span class="checkmark">
+                                    <img src="images/check.png" alt="check icon">
+                                </span>
+                            </label>
+                            <label class="color-option color-blue">
+                                <input type="radio" name="color" value="blue">
+                                <span class="checkmark">
+                                    <img src="images/check.png" alt="check icon">
+                                </span>
+                            </label>
+                            <label class="color-option color-green">
+                                <input type="radio" name="color" value="green">
+                                <span class="checkmark">
+                                    <img src="images/check.png" alt="check icon">
+                                </span>
+                            </label>
+                            <label class="color-option color-yellow">
+                                <input type="radio" name="color" value="yellow">
+                                <span class="checkmark">
+                                    <img src="images/check.png" alt="check icon">
+                                </span>
+                            </label>
+                            <label class="color-option color-gradiant">
+                                <input type="radio" name="color" value="color">
+                                <span class="checkmark">
+                                    <img src="images/check.png" alt="check icon">
+                                </span>
+                            </label>
+                        </div>
+                </div>
                 
                   <!-- choose size section -->
                     <div class="size border-bottom">
@@ -113,47 +183,56 @@
                     <!-- choose sizee button end here -->
 
                     <!-- quantity button -->
-                     <div class="qtybutton">
-                        <div class="wrapper">
-                            <span class="minus">-</span>
-                            <span class="num">01</span>
-                            <span class="plus">+</span>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                            <div class="qtybutton">
+                                <div class="wrapper">
+                                    <span class="minus">-</span>
+                                    <span class="num">01</span>
+                                    <span class="plus">+</span>
+                                </div>
                         </div>
-                    </div>
-                     <script>
-                        const plus = document.querySelector(".plus"),
-                        minus = document.querySelector(".minus"),
-                        num = document.querySelector(".num");
-
-                        let a = 1;
-                        plus.addEventListener("click", ()=>{
-                            a++;
-                            a = (a < 10) ? "0" + a : a;
-                            num.innerText = a;
-                            console.log(a);
-                        });
-                        minus.addEventListener("click", ()=>{
-                            if(a > 0) {
-                                a--;
-                                a = (a < 10) ? "0" + a : a;
-                                num.innerText = a;
-                                console.log(a);
-                            }
-                        });
-                     </script>
                     
+                    </div>
+
+                        <!-- add to cart button -->
+                    <div class="col-lg-7 col-lg-7 col-sm-7" style="padding-top: 20px;">
+        
+                            <button class="add-to-cart">
+                                <span class="amount">$29.99 </span>
+                                <span class="text">Add to Cart</span>
+                            </button>
+                    </div>
+                
+            </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
        
     
             <!-- description start here -->
              <div class="container">
-             <div class="row" style="padding-top: 50px;">
-                <h4 class="dhead">Description</4S3>
-                        <span class="span"><hr /></span>
-             </div>
+             <div class="row" style="padding-top: 50px;
+">
+                <h4 class="dhead">Description</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <svg width="95" height="4" viewBox="0 0 128 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="128" height="4" fill="#164C96"></rect>
+                      </svg>
+                </div>
+                <div class="col-lg-11 col-md-11 col-sm-11" >
+                    <svg width="1050" height="4" viewBox="0 0 1279 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="1050" height="4" fill="#EAECF0"></rect></svg>
+                </div>
+
+            </div>
+             
+              
+            
             <!--product description start here -->
              <div>
                 <h4 class="pdhead pt-5">Product Description</h4>
@@ -163,7 +242,7 @@
              <!-- benefits start here -->
               <div>
                 <h4 class="bhead">Benefits</h4>
-                <div class="list">
+                <div class="list" style="list-style-image: url(images/chk.png);">
                 <li>Durable leather is easily cleanable so you can keep your look fresh.</li>
                 <li>Water-repellent finish and internal membrane help keep your feet dry.</li>
                 <li>Toe piece with star pattern adds durability.</li>
@@ -177,7 +256,7 @@
               <!-- product details start here -->
                <div>
                 <h4 class="pdhead pt-3">Product Details</h4>
-                <div class="list">
+                <div class="list" style="list-style-image: url(images/chk.png);">
                 <li>Not intended for use as Personal Protective Equipment (PPE)</li>
                 <li>Water-repellent finish and internal membrane help keep your feet dry.</li>
                </div>
@@ -186,7 +265,7 @@
                <!-- more details start here -->
                 <div class="moredtl pb-10">
                     <h4 class="mdhead pt-3">More Details</h4>
-                    <div class="list">
+                    <div class="list" style="list-style-image: url(images/chk.png);">
                     <li>Lunarlon midsole delivers ultra-plush responsiveness</li>
                     <li>Encapsulated Air-Sole heel unit for lightweight cushioning</li>
                     <li>Colour Shown: Ale Brown/Black/Goldtone/Ale Brown</li>
