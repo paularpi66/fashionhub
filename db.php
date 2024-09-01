@@ -1,17 +1,14 @@
-php
 <?php
-    $link = @mysql_connect("localhost" , "root", "");
-    // echo 'connecting to database... <br />';
-    if ($link == false) {
-        echo "Error: can't connect to database server";
-        exit;
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "fashion_hub";
+
+    // Create connection
+    $link = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$link) {
+        die("Connection failed: " . mysqli_connect_error());
     }
-    // echo 'database connected.<br />';
-    
-    // echo 'selecting database...<br />';
-    if (mysql_select_db("fashion_hub", $link) == false) {
-        echo "Error: can't connect to database";
-        exit;
-    }
-    // echo 'database selected.<br />';
+    // echo "Connected successfully"."</br>";
 ?>

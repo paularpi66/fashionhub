@@ -11,10 +11,10 @@ Encapsulated Air-Sole heel unit for lightweight cushioning
 Colour Shown: Ale Brown/Black/Goldtone/Ale Brown
 Style: 805899-20");
 
-INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'\\fashionhub\\images\\1\\img1');
-INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'\\fashionhub\\images\\1\\img2');
-INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'\\fashionhub\\images\\1\\img3');
-INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'\\fashionhub\\images\\1\\img4');
+INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'images/1/img1.jpg');
+INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'images/1/img2.jpg');
+INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'images/1/img3.jpg');
+INSERT INTO `images`(`product_id`, `image_path`) VALUES (1,'images/1/img4.jpg');
 
 INSERT INTO `carts`(`total_price`) VALUES (0);
 
@@ -23,4 +23,3 @@ INSERT INTO `cart_items`(`product_id`, `quantity`, `size`, `color`, `cart_id`) V
 INSERT INTO `cart_items`(`product_id`, `quantity`, `size`, `color`, `cart_id`) VALUES (1,3,'large','#ECDEFF',1);
 
 Update `carts` set `total_price` = 71.56*6*(1+25/100.0) where `id` = 1;
- 

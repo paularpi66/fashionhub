@@ -1,9 +1,12 @@
+
 /*common start*/
+
+
 body{
-	font-family: 'PT Sans', sans-serif;
-	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	/* font-size: 16px;
 	font-weight: 400;
-	color: #898989;
+	color: #898989; */
 }
 /*common end*/
 /*header start*/
@@ -14,14 +17,75 @@ body{
     padding-left: 100px;
 }
 
-.small-img-group{
+button{
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: none;
+    transition: all .3s ease-in-out;
+}
+
+
+
+.carousel-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 44px 0;
+  transition: all 0.25s ease-in;
+}
+
+.carousel-view .item-list {
+  max-width: 950px;
+  width: 70vw;
+  display: flex;
+  gap: 2px;
+  scroll-behavior: smooth;
+  transition: all 0.25s ease-in;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.item-list::-webkit-scrollbar {
+  display: none;
+}
+
+.prev-btn {
+  background : none;
+  cursor: pointer;
+}
+
+.next-btn {
+  cursor: pointer;
+}
+
+.item {
+  scroll-snap-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius:8px;
+}
+  
+
+
+/* .small-img-group{
     display: flex;
     justify-content: space-between;
 }
 .small-img-column{
     flex-basis: 24%;
     cursor: pointer;
-}
+} */
+ /* choose color button */
+
+ 
+
+ /* choose color button end */
 .span hr{
 	width: 100%;
 	margin: 0 auto;
@@ -32,8 +96,16 @@ body{
 .size{
     padding-top: 20px;
 }
+
 .choosetext{
     color: #B9BBBF;
+}
+
+.ccolor{
+    padding-top: 10px;
+}
+.choosecolor{
+    color: #B9BBBF; 
 }
 .btngroup{
     padding-bottom: 20px;
@@ -41,6 +113,13 @@ body{
 
 .qtybutton{
     padding-top: 20px;
+}
+
+.addtocrtbtn{
+    padding-top: 20px;
+}
+.h1text{
+    color: #3A4980;
 }
 
 .btn{
@@ -70,6 +149,102 @@ body{
     font-weight: 600;
     pointer-events: none;
 }
+
+/* choose color */
+.color-option {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid auto;
+    transition: border 0.3s ease;
+    color: white;
+}
+
+#itm-cnt-bag {
+    color: white;
+    font-size: 5;
+}
+
+.color-option input[type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.color-option .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    display: none;
+    z-index: 1;
+}
+
+.color-option input[type="radio"]:checked + .checkmark {
+    display: block;
+}
+
+.color-option input[type="radio"]:checked {
+    border: 2px solid #007bff;
+}
+
+/* Example color styles */
+.color-red {
+    background-color: #ecdfcc;
+}
+
+.color-blue {
+    background-color: #bbd278;
+}
+
+.color-green {
+    background-color:   #BBC1F8;
+}
+
+.color-yellow {
+    background-color: #FFD3F8;
+}
+
+.color-gradiant {
+    background: linear-gradient( 0deg, #FFB6B6 50%, #98C185 50%);
+}
+
+/* Container for centering the button */
+/* .cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+} */
+
+/* Basic button styling */
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    background-color: #3A4980;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; /* For positioning amount */
+}
+.atext p{
+    color: #A3A9C2;
+}
+
 .ltext{
     color: #A3A9C2;
     background-color: #EDF0F8;
@@ -86,8 +261,12 @@ body{
 .pdhead{
     color: #344054;
 }
+.bhead{
+    color: #344054;
+
+}
 .dtext{
-    color: #667085;
+    color: #344054;
 }
 
 .phead{
@@ -95,8 +274,31 @@ body{
 }
 .list{
     color: #667085;
+    list-style-image: url(images/chk.png);
 }
 
 .moredtl{
     color: #344054;
+}
+
+/* cart */
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #1d364d;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
 }
